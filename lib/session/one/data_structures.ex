@@ -26,4 +26,31 @@ defmodule Session.One.DataStructures do
     |> Tuple.delete_at(1)
     |> Tuple.insert_at(0, :sum)
   end
+
+  @doc "A simple map sample"
+  def map_sample do
+    %{"x" => 1, "y" => 2}
+    |> Map.put("z", 3)
+    |> Map.replace("x", 0)
+    |> Map.update("y", 0, &(&1 + 1))
+  end
+
+  @doc "A simple map sample with keywords"
+  def map_sample_keywords do
+    %{x: 1, y: 2}
+    |> Map.put(:z, 3)
+    |> Map.replace(:x, 0)
+    |> Map.update(:y, 0, &(&1 + 1))
+  end
+
+  @doc "Map inplace updates"
+  def map_inplace_updates do
+    point = %{x: 0, y: 0, z: 0}
+    %{point | y: 1, z: 2}
+  end
+
+  @doc "Pattern matching with maps"
+  def vector_length(%{x: x, y: y, z: z}), do: :math.sqrt(x*x + y*y + z*z)
+  def vector_length(%{y: y, x: x}), do: :math.sqrt(x*x + y*y)
+  def vector_length(%{x: x}), do: x
 end
