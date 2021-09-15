@@ -29,4 +29,8 @@ defmodule DataStructuresTest do
     assert DataStructures.split_even_odd([1]) == [1]
     assert DataStructures.split_even_odd([]) == []
   end
+
+  test "tuple sample" do
+    assert DataStructures.tuple_sample() == {:sum, 1, 3}
+  end
 end
