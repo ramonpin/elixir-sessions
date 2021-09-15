@@ -57,4 +57,12 @@ defmodule DataStructuresTest do
     assert DataStructures.vector_length(%{x: 3, y: 4, c: 7}) == 5
     assert DataStructures.vector_length(%{x: 3, c: 7}) == 3
   end
+
+  test "range samples" do
+    assert DataStructures.range_sample() == 24
+    assert Enum.to_list(2..10//2) == [2, 4, 6, 8, 10]
+
+    assert Enum.member?(2..10//2, 4)
+    refute Enum.member?(2..10//2, 1)
+  end
 end

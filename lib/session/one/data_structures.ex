@@ -53,4 +53,12 @@ defmodule Session.One.DataStructures do
   def vector_length(%{x: x, y: y, z: z}), do: :math.sqrt(x*x + y*y + z*z)
   def vector_length(%{y: y, x: x}), do: :math.sqrt(x*x + y*y)
   def vector_length(%{x: x}), do: x
+
+  @doc "Presenting the Range"
+  def range_sample do
+    1..10
+    |> Enum.filter(fn n -> rem(n, 2) == 0 end) 
+    |> Enum.reject(fn n -> rem(n, 3) == 0 end)
+    |> Enum.sum 
+  end
 end
