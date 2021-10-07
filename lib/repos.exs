@@ -15,7 +15,7 @@ defmodule GithubRepos do
     |> Jason.encode!()
   end
 
-  defp do_some_calc(data) do 
+  defp do_some_calc(data) do
     data
     |> Enum.map(&Map.take(&1, ~w[full_name fork pushed_at]))
   end
@@ -23,4 +23,4 @@ end
 
 "ramonpin"
 |> GithubRepos.load()
-|> IO.puts()
+|> Enum.each(&IO.puts(inspect &1))
