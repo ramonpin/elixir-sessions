@@ -40,7 +40,7 @@ defmodule Session.One.ProteinTranslationBetter do
   @doc """
   Given a codon, return the corresponding protein as per @codon_table
   """
-  @spec of_codon(String.t()) :: {atom, String.t()}
+  @spec of_codon(String.t()) :: {:error, String.t()} | {:ok, :stop | String.t()}
   def of_codon(codon) do
     case Map.get(@codon_table, codon, :invalid) do
       :invalid -> {:error, "invalid codon"}
