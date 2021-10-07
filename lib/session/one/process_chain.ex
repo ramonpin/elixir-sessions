@@ -1,15 +1,16 @@
 defmodule Session.One.ProcessChain do
+  @moduledoc false
 
   def counter(next_pid) do
     receive do
       n when is_integer(n) ->
-        send next_pid, n + 1
+        send(next_pid, n + 1)
     end
   end
 
   def create_process(n) do
-    code_to_run = fn (_, send_to) ->
-      spawn(ProcessChain, :counter, [send_to])
+    code_to_run = fn _, send_to ->
+      spawn(Session.One.ProcessChain, :counter, [send_to])
     end
 
     last = Enum.reduce(1..n, self(), code_to_run)
@@ -26,8 +27,6 @@ defmodule Session.One.ProcessChain do
     # :observer.start
     # :timer.sleep(5_000)
 
-    :timer.tc(ProcessChain, :create_process, [n])
-    |> IO.inspect
+    :timer.tc(__MODULE__, :create_process, [n])
   end
-
 end

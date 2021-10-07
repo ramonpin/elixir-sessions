@@ -1,4 +1,6 @@
 defmodule Session.One.ProteinTranslationBetter do
+  @moduledoc false
+
   @codon_table %{
     "UGU" => "Cysteine",
     "UGC" => "Cysteine",

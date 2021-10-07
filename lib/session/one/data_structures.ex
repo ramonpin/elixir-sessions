@@ -50,8 +50,8 @@ defmodule Session.One.DataStructures do
   end
 
   @doc "Pattern matching with maps"
-  def vector_length(%{x: x, y: y, z: z}), do: :math.sqrt(x*x + y*y + z*z)
-  def vector_length(%{y: y, x: x}), do: :math.sqrt(x*x + y*y)
+  def vector_length(%{x: x, y: y, z: z}), do: :math.sqrt(x * x + y * y + z * z)
+  def vector_length(%{y: y, x: x}), do: :math.sqrt(x * x + y * y)
   def vector_length(%{x: x}), do: x
 
   @doc "Presenting the Range"
