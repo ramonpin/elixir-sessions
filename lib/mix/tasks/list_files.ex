@@ -7,6 +7,7 @@ defmodule Mix.Tasks.ListFiles do
 
   @spec run([binary]) :: :ok
   def run([]), do: run(["."])
+
   def run([dir]) when is_binary(dir) do
     System.cmd("ls", [dir])
     |> elem(0)

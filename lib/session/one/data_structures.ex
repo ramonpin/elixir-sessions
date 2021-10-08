@@ -57,8 +57,8 @@ defmodule Session.One.DataStructures do
   @doc "Presenting the Range"
   def range_sample do
     1..10
-    |> Enum.filter(fn n -> rem(n, 2) == 0 end) 
+    |> Enum.filter(fn n -> rem(n, 2) == 0 end)
     |> Enum.reject(fn n -> rem(n, 3) == 0 end)
-    |> Enum.sum 
+    |> Enum.sum()
   end
 end

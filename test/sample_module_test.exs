@@ -21,7 +21,7 @@ defmodule SampleModuleTest do
 
   test "complex_fun calculates solutions to ax^2 + bx + c = 0" do
     assert SampleModule.complex_fun(1, 0, -4) == {-2.0, 2.0}
-    assert SampleModule.complex_fun(1, 2, 1) == -1.0 
+    assert SampleModule.complex_fun(1, 2, 1) == -1.0
     assert SampleModule.complex_fun(1, 0, 4) == :complex_solution
-  end 
+  end
 end

@@ -8,6 +8,6 @@ defmodule EnumSampleTest do
   end
 
   test "stream samples" do
-    assert stream_ops_pipelining() == [0.5, 0.75] 
+    assert stream_ops_pipelining() == [0.5, 0.75]
   end
 end

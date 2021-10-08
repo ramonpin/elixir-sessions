@@ -23,4 +23,4 @@ end
 
 "ramonpin"
 |> GithubRepos.load()
-|> Enum.each(&IO.puts(inspect &1))
+|> Enum.each(&IO.puts(inspect(&1)))
