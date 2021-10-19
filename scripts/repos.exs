@@ -12,7 +12,7 @@ defmodule GithubRepos do
     |> Jason.decode!()
     |> Enum.reject(fn %{"fork" => fork} -> fork end)
     |> do_some_calc()
-    |> Jason.encode!()
+    # |> Jason.encode!()
   end
 
   defp do_some_calc(data) do
