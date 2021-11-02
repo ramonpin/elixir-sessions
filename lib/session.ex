@@ -1,4 +1,4 @@
-defmodule Session do
+ defmodule Session do
   @moduledoc """
   Documentation for `Session`.
   """
