@@ -1,4 +1,8 @@
 defmodule Ship do
+  @moduledoc """
+  This the solution to advent_of_code_2020 day 9 
+  """
+
   defstruct [:x, :y, :dir]
 
   def new(), do: %Ship{x: 0, y: 0, dir: 0}
@@ -99,6 +103,8 @@ defmodule ShipControl do
 end
 
 
-"F10, N3, F7, R90, F11"
+"ship.data"
+|> File.stream!()
+|> Enum.map(&String.trim/1)
 |> ShipControl.run(Ship.new())
 |> Ship.describe()
