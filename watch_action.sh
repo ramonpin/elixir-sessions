@@ -2,7 +2,7 @@
 
 # Launch mix to run tests
 clear
-unbuffer mix test 2>&1 | tee /dev/shm/watch_action.txt
+unbuffer mix test |& tee /dev/shm/watch_action.txt
 
 if [[ ${pipestatus[1]} -eq 0 ]]; then
   ICON=info
